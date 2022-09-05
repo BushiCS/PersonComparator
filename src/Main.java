@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    private static final int maxWords = 3;
+    private static final int MAX_WORDS = 3;
     public static void main(String[] args) {
         List<Person> list = new ArrayList<>();
         list.add(new Person("Jack", "Black White Yellow Blue Pink Green", 52));
@@ -20,7 +20,7 @@ public class Main {
         list.sort((o1, o2) -> {
             String[] surnameArray1 = o1.getSurname().split("\\P{IsAlphabetic}+");
             String[] surnameArray2 = o2.getSurname().split("\\P{IsAlphabetic}+");
-            if (surnameArray1.length >= maxWords && surnameArray2.length >= maxWords) {
+            if (surnameArray1.length >= MAX_WORDS && surnameArray2.length >= MAX_WORDS) {
                 return Integer.compare(o1.getAge(), o2.getAge());
             }
             if (surnameArray1.length > surnameArray2.length) {
